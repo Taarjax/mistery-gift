@@ -4,7 +4,7 @@ const CONFIG = {
     endDate: '2025-08-09',   // Date de fin - 9 août 2025
     totalDays: 4,
     messages: {
-        1: "🎂 Joyeux anniversaire ma chérie ! Aujourd'hui est ton jour spécial...",
+        1: "",
         2: "💝 Plus que quelques jours pour tes cadeaux !",
         3: "✨ Téma les abdos du fréro ! ",
         4: "🎉 Dernier jour de cette aventure, mais pas la fin de nos aventures... tutututu MAX VERSTAPEN"
@@ -337,7 +337,7 @@ function triggerBirthdayMode() {
 
 			Patience, samedi tu auras ton cadeau !
         `;
-    }, 2000);
+    }, 100);
 }
 
 // Lancement des confettis
@@ -374,8 +374,8 @@ function showWaitingMessage() {
             <div class="waiting-message" style="text-align: center; padding: 50px 20px;">
                 <h2 style="color: var(--secondary-purple); margin-bottom: 20px;">⏰ Patience...</h2>
                 <p style="font-size: 1.2rem; color: var(--text-dark);">
-                    Les surprises commencent le 6 août 2025 ! 
-                    <br>Le compte à rebours est en cours...
+                    Les devinettes commencent le 6 août 2025 ! 
+                    <br>TIC TAC... TIC TAC... TIC TAC...
                 </p>
             </div>
         `;
