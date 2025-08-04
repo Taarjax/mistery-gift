@@ -1,0 +1,451 @@
+/* Reset et variables CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-pink: #FFB6C1;
+    --secondary-purple: #DDA0DD;
+    --accent-blue: #B0E0E6;
+    --warm-yellow: #F0E68C;
+    --soft-white: #FFF8DC;
+    --text-dark: #4A4A4A;
+    --shadow: 0 8px 32px rgba(255, 182, 193, 0.2);
+    --gradient: linear-gradient(135deg, var(--primary-pink), var(--secondary-purple));
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #FFE5F1, #F0F8FF, #FFF0F5);
+    min-height: 100vh;
+    color: var(--text-dark);
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header et titre */
+.header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.title {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.5rem;
+    font-weight: 700;
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Compte à rebours */
+.countdown {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.countdown-item {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 15px;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 182, 193, 0.3);
+    min-width: 80px;
+}
+
+.countdown-number {
+    display: block;
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--secondary-purple);
+    margin-bottom: 5px;
+}
+
+.countdown-label {
+    font-size: 0.8rem;
+    color: var(--text-dark);
+    opacity: 0.8;
+}
+
+/* Navigation */
+.day-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding: 0 10px;
+}
+
+.nav-btn {
+    background: var(--gradient);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 25px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.nav-btn:hover:not(:disabled) {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 12px 40px rgba(255, 182, 193, 0.4);
+}
+
+.nav-btn:active:not(:disabled) {
+    transform: translateY(0) scale(0.98);
+    transition: all 0.1s ease;
+}
+
+.nav-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.current-day {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 12px 20px;
+    border-radius: 25px;
+    font-weight: 500;
+    color: var(--secondary-purple);
+    box-shadow: var(--shadow);
+    backdrop-filter: blur(10px);
+}
+
+/* Contenu principal */
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.image-container {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    background: white;
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.daily-image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.image-container:hover .daily-image {
+    transform: scale(1.02);
+}
+
+/* Animations de transition modernes */
+.image-container.slide-out-left {
+    animation: slideOutLeft 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.image-container.slide-out-right {
+    animation: slideOutRight 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.image-container.slide-in-left {
+    animation: slideInLeft 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.image-container.slide-in-right {
+    animation: slideInRight 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes slideOutLeft {
+    0% {
+        transform: translateX(0) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(-100%) scale(0.9);
+        opacity: 0;
+    }
+}
+
+@keyframes slideOutRight {
+    0% {
+        transform: translateX(0) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(100%) scale(0.9);
+        opacity: 0;
+    }
+}
+
+@keyframes slideInLeft {
+    0% {
+        transform: translateX(-100%) scale(0.9);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0) scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInRight {
+    0% {
+        transform: translateX(100%) scale(0.9);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0) scale(1);
+        opacity: 1;
+    }
+}
+
+.image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(255, 182, 193, 0.2), rgba(221, 160, 221, 0.2));
+    pointer-events: none;
+}
+
+.message-container {
+    text-align: center;
+    max-width: 500px;
+    width: 100%;
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.daily-message {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.4rem;
+    line-height: 1.6;
+    color: var(--text-dark);
+    background: rgba(255, 255, 255, 0.9);
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 182, 193, 0.3);
+    position: relative;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Animations pour les messages */
+.message-container.fade-out {
+    animation: messageSlideOut 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.message-container.fade-in {
+    animation: messageSlideIn 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes messageSlideOut {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(30px) scale(0.95);
+        opacity: 0;
+    }
+}
+
+@keyframes messageSlideIn {
+    0% {
+        transform: translateY(-30px) scale(0.95);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+}
+
+.daily-message::before {
+    content: '"';
+    font-size: 3rem;
+    color: var(--primary-pink);
+    position: absolute;
+    top: -10px;
+    left: 20px;
+}
+
+.daily-message::after {
+    content: '"';
+    font-size: 3rem;
+    color: var(--primary-pink);
+    position: absolute;
+    bottom: -30px;
+    right: 20px;
+}
+
+/* Barre de progression */
+.progress-container {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.progress-bar {
+    width: 100%;
+    max-width: 300px;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    margin: 0 auto 15px;
+    overflow: hidden;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.progress-fill {
+    height: 100%;
+    background: var(--gradient);
+    border-radius: 10px;
+    transition: width 0.5s ease;
+    width: 25%;
+}
+
+.progress-text {
+    font-size: 0.9rem;
+    color: var(--text-dark);
+    opacity: 0.8;
+}
+
+/* Animations spéciales pour l'anniversaire */
+.birthday-mode {
+    animation: birthdayGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes birthdayGlow {
+    from {
+        box-shadow: 0 0 20px var(--primary-pink);
+    }
+    to {
+        box-shadow: 0 0 40px var(--secondary-purple);
+    }
+}
+
+/* Confettis */
+.confetti-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1000;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .title {
+        font-size: 2rem;
+    }
+    
+    .countdown {
+        gap: 10px;
+    }
+    
+    .countdown-item {
+        min-width: 60px;
+        padding: 10px;
+    }
+    
+    .countdown-number {
+        font-size: 1.4rem;
+    }
+    
+    .nav-btn {
+        padding: 10px 15px;
+        font-size: 0.9rem;
+    }
+    
+    .daily-message {
+        font-size: 1.2rem;
+        padding: 20px;
+    }
+    
+    .daily-image {
+        height: 250px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 15px;
+    }
+    
+    .title {
+        font-size: 1.8rem;
+    }
+    
+    .countdown {
+        gap: 8px;
+    }
+    
+    .countdown-item {
+        min-width: 50px;
+        padding: 8px;
+    }
+    
+    .countdown-number {
+        font-size: 1.2rem;
+    }
+    
+    .day-navigation {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .nav-btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* Animations d'entrée */
+.animate__fadeIn {
+    animation-duration: 1s;
+}
+
+.animate__fadeInUp {
+    animation-duration: 0.8s;
+}
+
+.animate__fadeInDown {
+    animation-duration: 0.8s;
+} 

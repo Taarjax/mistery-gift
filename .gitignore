@@ -1,0 +1,20 @@
+# Fichiers système
+.DS_Store
+Thumbs.db
+
+# Fichiers d'éditeur
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log
+
+# Fichiers temporaires
+*.tmp
+*.temp
+
+# Images de test (optionnel)
+# Décommentez si vous voulez exclure les images de test
+# images/test-* 

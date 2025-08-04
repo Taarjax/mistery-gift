@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎉 Surprise Anniversaire 🎉</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header avec compte à rebours -->
+        <header class="header">
+            <h1 class="title animate__animated animate__fadeInDown">
+                🎂 Surprise Anniversaire 🎂
+            </h1>
+            <div class="countdown animate__animated animate__fadeInUp">
+                <div class="countdown-item">
+                    <span id="days" class="countdown-number">00</span>
+                    <span class="countdown-label">Jours</span>
+                </div>
+                <div class="countdown-item">
+                    <span id="hours" class="countdown-number">00</span>
+                    <span class="countdown-label">Heures</span>
+                </div>
+                <div class="countdown-item">
+                    <span id="minutes" class="countdown-number">00</span>
+                    <span class="countdown-label">Minutes</span>
+                </div>
+                <div class="countdown-item">
+                    <span id="seconds" class="countdown-number">00</span>
+                    <span class="countdown-label">Secondes</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Navigation des jours -->
+        <nav class="day-navigation">
+            <button class="nav-btn prev-btn" id="prevBtn">
+                <span>←</span> Jour précédent
+            </button>
+            <div class="current-day" id="currentDay">
+                Jour <span id="dayNumber">1</span> sur 4
+            </div>
+            <button class="nav-btn next-btn" id="nextBtn" disabled>
+                Jour suivant <span>→</span>
+            </button>
+        </nav>
+
+        <!-- Contenu principal -->
+        <main class="main-content">
+            <div class="image-container animate__animated animate__fadeIn">
+                <img id="dailyImage" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8ZGVmcz4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iZ3JhZDEiIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjEwMCUiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdHlsZT0ic3RvcC1jb2xvcjojRkZCNkMxO3N0b3Atb3BhY2l0eToxIiAvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0eWxlPSJzdG9wLWNvbG9yOiNEREUwREQ7c3RvcC1vcGFjaXR5OjEiIC8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogIDwvZGVmcz4KICA8cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgZmlsbD0idXJsKCNncmFkMSkiLz4KICA8dGV4dCB4PSIyMDAiIHk9IjE1MCIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjI0IiBmaWxsPSJ3aGl0ZSIgdGV4dC1hbmNob3I9Im1pZGRsZSI+CiAgICA8dHNwYW4geD0iMjAwIiBkeT0iLjNlbSI+8J+RiiBJbWFnZSBkdSBqb3VyIDwvdHNwYW4+CiAgPC90ZXh0PgogIDx0ZXh0IHg9IjIwMCIgeT0iMTgwIiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTYiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj4KICAgIEFqb3V0ZXogdm90cmUgaW1hZ2UgZGF5MS5qcGcKICA8L3RleHQ+Cjwvc3ZnPg==" alt="Image du jour" class="daily-image">
+                <div class="image-overlay"></div>
+            </div>
+            
+            <div class="message-container animate__animated animate__fadeInUp">
+                <p id="dailyMessage" class="daily-message">
+                    Message du jour...
+                </p>
+            </div>
+        </main>
+
+        <!-- Indicateur de progression -->
+        <div class="progress-container">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+            <span class="progress-text" id="progressText">Jour 1 sur 4</span>
+        </div>
+    </div>
+
+    <!-- Confettis pour l'anniversaire -->
+    <div id="confetti-container" class="confetti-container"></div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html> 
