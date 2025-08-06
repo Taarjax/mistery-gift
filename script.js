@@ -5,8 +5,8 @@ const CONFIG = {
     totalDays: 4,
     messages: {
         1: "",
-        2: "💝 Plus que quelques jours pour tes cadeaux !",
-        3: "✨ Téma les abdos du fréro ! ",
+        2: "✨ Téma les abdos du fréro ! ",
+        3: "💝 Plus que quelques jours pour tes cadeaux !",
         4: "🎉 Dernier jour de cette aventure, mais pas la fin de nos aventures... tutututu MAX VERSTAPEN"
     }
 };
